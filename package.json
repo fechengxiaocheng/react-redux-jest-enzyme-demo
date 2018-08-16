@@ -14,8 +14,7 @@
   },
   "lint-staged": {
     "*.js": [
-        "npm run eslint",
-        "npm test"
+        "npm run eslint"
     ]
   },
   "author": "",
