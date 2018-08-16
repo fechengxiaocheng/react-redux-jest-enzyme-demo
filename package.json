@@ -9,14 +9,9 @@
     "server": "nodemon -w config -w server.js server.js",
     "test": "jest --findRelatedTests src/reducers/index.spec.js",
     "eslint": "eslint .",
-    "eslint:fix": "eslint . --fix",
-    "precommit": "lint-staged && npm test"
+    "eslint:fix": "eslint . --fix"
   },
-  "lint-staged": {
-    "*.js": [
-      "npm run eslint"
-    ]
-  },
+  "pre-commit": ["test", "eslint"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -46,6 +41,7 @@
     "mini-css-extract-plugin": "^0.4.1",
     "nodemon": "^1.18.3",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "pre-commit": "^1.2.2",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.16.4",

@@ -1,6 +1,6 @@
 import { ADD_TODO, DELETE_TODO } from '../constants';
 
-const initialState = ['chengxiaocheng'];
+const initialState = ['xlj'];
 
 export default function todos(state = initialState, action) {
     switch (action.type) {
