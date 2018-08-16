@@ -1,22 +1,28 @@
 /*
- * @Author: fechengxiaocheng 
- * @Date: 2018-08-14 15:26:43 
- * @Description: 'todo的item组建' 
+ * @Author: fechengxiaocheng
+ * @Date: 2018-08-14 15:26:43
+ * @Description: 'todo的item组建'
  * @Last Modified by: za-xielingjuan
- * @Last Modified time: 2018-08-15 16:44:50
- * @ToDo: '' 
+ * @Last Modified time: 2018-08-16 18:11:57
+ * @ToDo: ''
  */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
-class ToDoItem extends React.Component {
+class TodoItem extends React.Component {
     render() {
         const { deleteTodo, todo, id } = this.props;
         return (
             <li onClick={() => deleteTodo(id)}>{todo}</li>
-        )
+        );
     }
 }
 
-export default ToDoItem;
+TodoItem.propTypes = {
+    deleteTodo: PropTypes.func,
+    todo: PropTypes.string,
+    id: PropTypes.number
+};
+
+export default TodoItem;

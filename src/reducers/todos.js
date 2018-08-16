@@ -4,14 +4,14 @@ const initialState = ['xlj'];
 
 export default function todos(state = initialState, action) {
     switch (action.type) {
-        case ADD_TODO:
+    case ADD_TODO:
         return [
             action.text,
             ...state
         ];
-        case DELETE_TODO:
-        return state.filter((x,index) => index !== action.index);
-        default:
-        return state
+    case DELETE_TODO:
+        return state.filter((x, index) => index !== action.index);
+    default:
+        return state;
     }
 }

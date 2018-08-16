@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import TodoInput from '../components/TodoInput';
 import TodoItem from '../components/TodoItem';
 import * as todoActions from '../actions';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class App extends React.Component {
         const { actions } = this.props;
         actions.deleteTodo(text);
     }
-    
+
     render() {
         const { todos } = this.props;
         return (
@@ -30,7 +30,7 @@ class App extends React.Component {
                 <ul>
                     {
                         todos.map((todo, index) => {
-                            return <TodoItem key={index} todo={todo} id={index} deleteTodo={this.deleteTodo} />
+                            return <TodoItem key={index} todo={todo} id={index} deleteTodo={this.deleteTodo} />;
                         })
                     }
                 </ul>
@@ -41,11 +41,16 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({
     todos: state.todos
-})
-   
+});
+
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(todoActions, dispatch)
 });
+
+App.propTypes = {
+    todos: PropTypes.array,
+    actions: PropTypes.object
+};
 
 export default connect(
     mapStateToProps,
