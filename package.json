@@ -11,8 +11,8 @@
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix"
   },
-  "pre-commit": ["eslint"],
-  "author": "",
+  "pre-commit": ["test", "eslint"],
+  "author": "fechengxiaocheng",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
