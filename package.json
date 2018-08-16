@@ -10,7 +10,7 @@
     "test": "jest --findRelatedTests src/reducers/index.spec.js",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged && npm test"
   },
   "lint-staged": {
     "*.js": [
