@@ -1,1 +1,1 @@
-# 基于jest + rezyme的react项目单元测试
+# 基于jest + rezyme的react单元测试项目
