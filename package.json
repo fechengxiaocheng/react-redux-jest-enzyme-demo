@@ -9,9 +9,14 @@
     "server": "nodemon -w config -w server.js server.js",
     "test": "jest --findRelatedTests src/reducers/index.spec.js",
     "eslint": "eslint .",
-    "eslint:fix": "eslint . --fix"
+    "eslint:fix": "eslint . --fix",
+    "precommit": "lint-staged && node test"
   },
-  "pre-commit": ["test", "eslint"],
+  "lint-staged": {
+    "*.js": [
+      "npm run eslint"
+    ]
+  },
   "author": "fechengxiaocheng",
   "license": "ISC",
   "devDependencies": {
@@ -35,6 +40,7 @@
     "file-loader": "^1.1.11",
     "happypack": "^5.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
     "jest": "^23.5.0",
     "lint-staged": "^7.2.2",
     "lodash": "^4.17.10",
